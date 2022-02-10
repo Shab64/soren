@@ -1,0 +1,859 @@
+<div class="tab-pane fade 2tab" id="services">
+					<div class="job-profile">
+						<div class="job-bx-title clearfix">
+							<div class="container container-my">
+								<h5 class="font-weight-700 pull-left text-uppercase">Services</h5>
+							</div>
+						</div>
+						<div class="container container-my">
+							<div class="job-bx">
+								<div class="row">
+									<div class="col-lg-12">
+										<h5 class="mt-2 h5-chk-frm">Professional Services </h5>
+										<div class="row">
+											<div class="col-lg-12">
+												<div style="position: relative; " class="form-group">
+													<label for="">Select Services <i style="position:absolute; top: 60%;z-index: 9;left: 95%; background-image: linear-gradient(#dadde4, #dadde4);border-radius: 50px;color: #000;font-size: 8px; padding: 3px;" class="fa fa-chevron-down" aria-hidden="true"></i></label>
+													<select id="pro-ser" onchange="pro_service()" class="form-control" multiple name="" id="">
+														<option id="aupair_ser" value="Au Pair">Au Pair</option>
+														<option id="babysitter_ser" value="Babysitter">Babysitter</option>
+														<option id="confinement_nurse_ser" onclick="pro_service('confinement_nurse_ser')" value="Confinement Nurse">Confinement Nurse</option>
+														<option id="doula_ser" value="Doula"> Doula</option>
+														<option id="lactationconsultant_ser" value="Lactation Consultant">Lactation Consultant</option>
+														<option id="maternitynurse_ser" value="Maternity Nurse">Maternity Nurse</option>
+														<option id="aupair_ser" value="Nanny">Nanny</option>
+														<option id="aupair_ser" value="Night Nurse">Night Nurse</option>
+														<option id="aupair_ser" value="Sleep Consultant">Sleep Consultant</option>
+													</select>
+												</div>
+											</div>
+
+											<script>
+												function pro_service() {
+
+													val_servc = document.getElementById('pro-ser').selectedOptions;
+
+													var values = Array.from(val_servc).map(({
+														value
+													}) => value);
+
+													if (values.indexOf("Lactation Consultant") !== -1 || values.indexOf("Sleep Consultant") !== -1) {
+														document.getElementById("slp-lct-on").style.display = "flex";
+
+													} else {
+														document.getElementById("slp-lct-on").style.display = "none";
+													}
+												}
+
+												function dayFunction(num) {
+													var day = document.getElementById(num).checked;
+													if (day === true) {
+														document.getElementById("1" + num).style.display = "none";
+														document.getElementById("2" + num).style.display = "block";
+													} else {
+														document.getElementById("1" + num).style.display = "block";
+														document.getElementById("2" + num).style.display = "none";
+													}
+												}
+											</script>
+
+										</div>
+
+										<h5 class="mt-2 h5-chk-frm dm">All Services Except Lactation/Sleep Consultant</h5>
+										<p class="substitle_idcheck">Rates charged :</p>
+										<p>
+											What rate do you charge for this service? Must be minimum default rate or
+											higher. Please note you can also increase the value of a job on a case
+											by case basis.
+										</p>
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="form-group">
+													<label for="">Default rate set by admin</label>
+													<input type="text" class="form-control" disabled value="level 2" />
+												</div>
+											</div>
+
+										</div>
+
+										<p class="substitle_idcheck">Per hour rate (standard) :</p>
+										<p>What is your standard minimum charge per hour for this service?</p>
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Enter amounzzzt</label>
+													<input type="number" class="form-control" placeholder="$ Amount" value="level 2" />
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Which rate you want to labeled as ?</label>
+													<div class="row mt-3">
+														<div class="col-lg-6">
+															<div style="display: flex;">
+																<label>Show default rate</label>
+																<input class="mt-2 mr-4 ml-2" name="show_rate_def_my" type="radio">
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div style="display: flex;">
+																<label>My own rate</label>
+																<input class="mt-2 ml-2" name="show_rate_def_my" type="radio">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<p class="substitle_idcheck">Travel Fee :</p>
+										<!-- <p>What is your standard minimum charge per hour for this service?</p> -->
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Do you charge travel fee</label>
+													<input type="number" class="form-control" placeholder="$ Amount" value="level 2" />
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Which rate you want to labeled as ?</label>
+													<div class="row mt-3">
+														<div class="col-lg-6">
+															<div style="display: flex;">
+																<label>Show default rate</label>
+																<input class="mt-2 mr-4 ml-2" name="show_rate_def_my" type="radio">
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div style="display: flex;">
+																<label>My own rate</label>
+																<input class="mt-2 ml-2" name="show_rate_def_my" type="radio">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Notice required for online bookings</label>
+
+													<input class="form-control" type="text" value="" placeholder="Enter value in hours" value="24hrs" />
+
+												</div>
+											</div>
+
+
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Do you charge a travel fee for this service</label>
+
+													<div class="row mt-3">
+														<div class="col-lg-6">
+															<div style="display: flex;">
+																<label>Yes</label>
+																<input id="charge_radio" onclick="charge_travel()" class="mt-2 mr-4 ml-2" name="charge_a_travel_fee" type="radio">
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div style="display: flex;">
+																<label>No</label>
+																<input onclick="charge_travel()" class="mt-2 ml-2" name="charge_a_travel_fee" type="radio">
+															</div>
+														</div>
+													</div>
+
+													<div style="display: none;" class="mt-3" id="charge_a_travel_fee">
+														<label>What type of fee?</label>
+														<input class="form-control" type="text" value="" placeholder="Enter fee type" value="24hrs" />
+													</div>
+
+													<script>
+														function charge_travel() {
+															var charge_val = document.getElementById("charge_radio");
+															if (charge_val.checked === true) {
+																document.getElementById("charge_a_travel_fee").style.display = "block";
+															} else {
+																// console.clear();
+																// console.log("working_charge not");
+																document.getElementById("charge_a_travel_fee").style.display = "none";
+															}
+														}
+													</script>
+
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Minimum number of hours per booking</label>
+
+													<input class="form-control" type="number" value="" placeholder="Enter value in hours" value="24hrs" />
+
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Maximum number of hours per booking</label>
+
+													<input class="form-control" type="number" value="" placeholder="Enter value in hours" value="24hrs" />
+
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Padding before this service, e.g. travel time </label>
+
+													<input class="form-control" type="time" value="" placeholder="Enter value in hours" value="24hrs" />
+
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Padding after time </label>
+
+													<input class="form-control" type="time" value="" placeholder="Enter value in hours" value="24hrs" />
+
+												</div>
+											</div>
+
+											<div class="col-lg-6">
+												<div class="form-group">
+													<label>Number of child cared per booking</label>
+
+													<input class="form-control" type="number" value="" placeholder="Enter value in hours" value="24hrs" />
+
+												</div>
+
+											</div>
+
+											<div class="col-lg-12">
+
+												<p class="substitle_idcheck">Reminder system :</p>
+
+											</div>
+											<div class="col-lg-4">
+												<div style="position: relative;" class="form-group">
+
+													<label>How do you prefer to be reminded <i style="position:absolute; top: 60%;z-index: 9;left: 90%; background-image: linear-gradient(#dadde4, #dadde4);border-radius: 50px;color: #000;font-size: 8px; padding: 3px;" class="fa fa-chevron-down" aria-hidden="true"></i></label>
+
+													<select class="selectpicker form-control" name="country_birth" required data-selected-text-format="count > 3">
+														<option value="">Select Service</option>
+														<option value="email">Email</option>
+														<option value="text system">Text System</option>
+													</select>
+												</div>
+											</div>
+
+
+											<div class="col-lg-4">
+												<div class="form-group">
+													<label>How ofter? </label>
+													<input class="form-control" type="number" value="" placeholder="Enter value in hours" />
+												</div>
+
+											</div>
+											<div class="col-lg-4">
+												<div style="position: relative;" class="form-group">
+													<label>Do you require deposite for service? <i style="position:absolute; top: 60%;z-index: 9;left: 90%; background-image: linear-gradient(#dadde4, #dadde4);border-radius: 50px;color: #000;font-size: 8px; padding: 3px;" class="fa fa-chevron-down" aria-hidden="true"></i></label>
+													<!-- <input class="form-control" type="number" value="" placeholder="Enter value in hours" /> -->
+													<select class="selectpicker form-control" name="country_birth" required data-selected-text-format="count > 3">
+														<option value="">Select Service</option>
+														<option value="yes">Yes</option>
+														<option value="no">No</option>
+													</select>
+												</div>
+
+											</div>
+
+											<div class="col-lg-12">
+												<div class="form-group">
+													<label>Notes to family on booking this service </label>
+													<textarea maxlength="200" rows="8" cols="50" class="form-control"></textarea>
+												</div>
+
+											</div>
+											<div class="col-lg-12">
+												<div class="row" style="display: none;" id="slp-lct-on">
+													<div class="col-lg-12">
+														<h5 class="mt-2 h5-chk-frm">For Sleep / Lactation Consultant : </h5>
+													</div>
+
+													<div class="col-lg-12">
+														<p class="substitle_idcheck">Do you offer phone consultations for this service? </h5>
+													</div>
+
+													<div class="col-lg-6">
+														<div class="form-group">
+															<label>Phone consultations for this service? </label>
+															<select class="selectpicker form-control" name="country_birth" required data-selected-text-format="count > 3">
+																<option value="">Select Service</option>
+																<option value="yes">Yes</option>
+																<option value="no">No</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-lg-6">
+													</div>
+
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label>Rate for initial review</label>
+															<input type="text" class="form-control" />
+														</div>
+													</div>
+
+
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label>Padding time after</label>
+															<input type="time" class="form-control" />
+														</div>
+													</div>
+
+
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label>Padding time before</label>
+															<input type="time" class="form-control" />
+														</div>
+													</div>
+
+
+
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label>Rate for follow up calls</label>
+															<input type="text" class="form-control" />
+														</div>
+													</div>
+
+
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label>Padding time after</label>
+															<input type="time" class="form-control" />
+														</div>
+													</div>
+
+
+													<div class="col-lg-4">
+														<div class="form-group">
+															<label>Padding time before</label>
+															<input type="time" class="form-control" />
+														</div>
+													</div>
+
+
+
+													<div class="col-lg-6">
+														<div class="form-group">
+															<label>Do you work public holidays for this service?</label>
+															<select class="form-control">
+																<option value="yes">yes</option>
+																<option value="no">no</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="col-lg-6">
+														<div class="form-group">
+															<label>Do you offer telehealth consultations for this service?</label>
+															<select class="form-control">
+																<option value="yes">yes</option>
+																<option value="no">no</option>
+															</select>
+														</div>
+													</div>
+
+												</div>
+											</div>
+
+
+											<div class="col-lg-12">
+												<h5 class="mt-2 h5-chk-frm">Working Period</h5>
+												<p class="substitle_idcheck">Set availability for bookings :</p>
+											</div>
+
+											<div class="col-lg-12">
+												<div class="form-group">
+													<div style="max-width: 260px !important;">
+														<label>Can booked online every <i style="position:absolute; top: 8%;z-index: 9;left: 20%; background-image: linear-gradient(#dadde4, #dadde4);border-radius: 50px;color: #000;font-size: 8px; padding: 3px;" class="fa fa-chevron-down" aria-hidden="true"></i></label>
+														<select class="form-control">
+															<option>15 minutes</option>
+															<option>30 minutes</option>
+															<option>45 minutes</option>
+															<option>1 hour</option>
+														</select>
+													</div>
+
+													<input type="checkbox" class="mr-1 mt-3" />
+													<span>Reset the online booking time after a break </span>
+
+													<style>
+														.days_booking_time {
+															/* display: flex;
+															flex-direction: row; */
+															border-bottom: 1px solid lightgray;
+															padding: 20px 0 20px 0;
+														}
+
+														.p-not-working-day {
+															margin: 0px;
+														}
+													</style>
+
+													<div class="days_booking_time">
+														<div class="row">
+															<div class="col-lg-3">
+																<div class="flx_days_wp">
+																	<input id="1" onclick="dayFunction('1')" type="checkbox" class="mr-3 mt-2" />
+																	<Label>Monday</label>
+
+																</div>
+															</div>
+															<div class="col-lg-9">
+																<p class="p-not-working-day" id="11">Not Working on this day</p>
+																<div style="display: none;" id="21">
+																	<input class="mr-3 inpt-150" type="time" /> to <input class="ml-3 inpt-150" type="time" />
+
+																	<span class="ml-4">+ break <i style="background-image: linear-gradient(#223e7e, #223e7e);
+																									border-radius: 50%;
+																									color: #ffffff;
+																									font-size: 15.5px;
+																									padding: 2px;" class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Breaks are optional">
+																		</i></span>
+																	<input class="ml-2" type="number" style="border-radius:3px;padding:5px;width: 150px;background-color: #dadde4!important;border:none;" placeholder="Enter in minutes" />
+
+
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="days_booking_time">
+														<div class="row">
+															<div class="col-lg-3">
+																<div class="flx_days_wp">
+																	<input id="2" onclick="dayFunction('2')" type="checkbox" class="mr-3 mt-2" /> <Label>Tuesday</label>
+																</div>
+															</div>
+															<div class="col-lg-9">
+																<p class="p-not-working-day" id="12">Not Working on this day</p>
+																<div style="display: none;" id="22">
+																	<input type="time" class="mr-3 inpt-150" /> to <input class="ml-3 inpt-150" type="time" />
+																	<span class="ml-4">+ break <i style="background-image: linear-gradient(#223e7e, #223e7e);
+																									border-radius: 50%;
+																									color: #ffffff;
+																									font-size: 15.5px;
+																									padding: 2px;" class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Breaks are optional">
+																		</i></span>
+																	<input type="number" class="ml-2" style="border-radius:3px;padding:5px;width: 150px;background-color: #dadde4!important;border:none;" placeholder="Enter in minutes" />
+
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="days_booking_time">
+														<div class="row">
+															<div class="col-lg-3">
+																<div class="flx_days_wp">
+																	<input id="3" onclick="dayFunction('3')" type="checkbox" class="mr-3 mt-2" /> <Label>Wednesday</label>
+																</div>
+															</div>
+															<div class="col-lg-9">
+																<p class="p-not-working-day" id="13">Not Working on this day</p>
+																<div style="display: none;" id="23">
+																	<input type="time" class="mr-3 inpt-150" /> to <input class="ml-3 inpt-150" type="time" />
+																	<span class="ml-4">+ break <i style="background-image: linear-gradient(#223e7e, #223e7e);
+																									border-radius: 50%;
+																									color: #ffffff;
+																									font-size: 15.5px;
+																									padding: 2px;" class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Breaks are optional">
+																		</i></span>
+																	<input class="ml-2" type="number" style="border-radius:3px;padding:5px;width: 150px;background-color: #dadde4!important;border:none;" placeholder="Enter in minutes" />
+
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="days_booking_time">
+														<div class="row">
+															<div class="col-lg-3">
+																<div class="flx_days_wp">
+																	<input id="4" onclick="dayFunction('4')" type="checkbox" class="mr-3 mt-2" /> <Label>Thursday</label>
+																</div>
+															</div>
+															<div class="col-lg-9">
+																<p class="p-not-working-day" id="14">Not Working on this day</p>
+																<div style="display: none;" id="24">
+																	<input class="mr-3 inpt-150" type="time" /> to <input class="ml-3 inpt-150" type="time" />
+																	<span class="ml-4">+ break <i style="background-image: linear-gradient(#223e7e, #223e7e);
+																									border-radius: 50%;
+																									color: #ffffff;
+																									font-size: 15.5px;
+																									padding: 2px;" class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Breaks are optional">
+																		</i></span>
+																	<input type="number" class="ml-2" style="border-radius:3px;padding:5px;width: 150px;background-color: #dadde4!important;border:none;" placeholder="Enter in minutes" />
+
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="days_booking_time">
+														<div class="row">
+															<div class="col-lg-3">
+																<div class="flx_days_wp">
+																	<input id="5" onclick="dayFunction('5')" type="checkbox" class="mr-3 mt-2" /> <Label>Friday</label>
+																</div>
+															</div>
+															<div class="col-lg-9">
+																<p class="p-not-working-day" id="15">Not Working on this day</p>
+																<div style="display: none;" id="25">
+
+																	<input class="mr-3 inpt-150" type="time" /> to <input class="ml-3 inpt-150" type="time" />
+																	<span class="ml-4">+ break <i style="background-image: linear-gradient(#223e7e, #223e7e);
+																									border-radius: 50%;
+																									color: #ffffff;
+																									font-size: 15.5px;
+																									padding: 2px;" class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Breaks are optional">
+																		</i></span>
+																	<input type="number" class="ml-2" style="border-radius:3px;padding:5px;width: 150px;background-color: #dadde4!important;border:none;" placeholder="Enter in minutes" />
+
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="days_booking_time">
+														<div class="row">
+															<div class="col-lg-3">
+																<div class="flx_days_wp">
+																	<input id="6" onclick="dayFunction('6')" type="checkbox" class="mr-3 mt-2" /> <Label>Saturday</label>
+																</div>
+															</div>
+															<div class="col-lg-9">
+																<p class="p-not-working-day" id="16">Not Working on this day</p>
+																<div style="display: none;" id="26">
+																	<input class="mr-3 inpt-150" type="time" /> to <input class="ml-3 inpt-150" type="time" />
+																	<span class="ml-4">+ break <i style="background-image: linear-gradient(#223e7e, #223e7e);
+																									border-radius: 50%;
+																									color: #ffffff;
+																									font-size: 15.5px;
+																									padding: 2px;" class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Breaks are optional">
+																		</i></span>
+																	<input type="number" style="border-radius:3px;padding:5px;width: 150px;background-color: #dadde4!important;border:none;" class="ml-2" placeholder="Enter in minutes" />
+
+																</div>
+															</div>
+														</div>
+
+													</div>
+
+													<style>
+														.flx_days_wp {
+															display: flex;
+														}
+
+														.inpt-150 {
+															width: 160px;
+														}
+													</style>
+
+													<div style="border-bottom: none!important;" class="days_booking_time">
+														<div class="row">
+															<div class="col-lg-3">
+																<div class="flx_days_wp">
+																	<input id="7" onclick="dayFunction('7')" type="checkbox" class="mr-3 mt-2" /> <Label>Sunday</label>
+																</div>
+															</div>
+															<div class="col-lg-9">
+																<p id="17">Not Working on this day</p>
+																<div style="display: none; " id="27">
+																	<input type="time" class="mr-3 inpt-150" /> to <input class="ml-3 inpt-150" type="time" />
+																	<span class="ml-4">+ break <i style="background-image: linear-gradient(#223e7e, #223e7e);
+																									border-radius: 50%;
+																									color: #ffffff;
+																									font-size: 15.5px;
+																									padding: 2px;" class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Breaks are optional">
+																		</i></span>
+																	<input type="number" style="border-radius:3px;padding:5px;width: 150px;background-color: #dadde4!important;border:none;" class="ml-2" placeholder="Enter in minutes" />
+
+																</div>
+															</div>
+														</div>
+
+													</div>
+
+												</div>
+											</div>
+
+
+
+										</div>
+									</div>
+
+									<!-- <h5 class="mt-2 h5-chk-frm">Personal Information </h5> -->
+
+									<!-- <?php $services = json_decode($data['nurse']['services'], true);
+											if (!empty($services)) {
+												foreach ($services as $k => $service) { ?>
+											<div class="col-lg-3 col-md-3">
+												<div class="form-group">
+													<label><?= $service ?> </label>
+												</div>
+											</div>
+										<?php }
+											} else { ?>
+										<div class="col-lg-3 col-md-3">
+											<div class="form-group">
+												<label>No services yet</label>
+											</div>
+										</div>
+									<?php } ?> -->
+								</div>
+							</div>
+						</div>
+
+
+						<!-- <div class="col-lg-4 col-md-4 offset-4" style="margin-top: 15px!important">
+							<div class="d-flex justify-content-center">
+								<a href="#" class="btn btn-dark btn-main btn-lg btn-block mt-0 mb-5" data-toggle="modal" data-target="#serModal">Add Service</a>
+							</div>
+						</div> -->
+						<!-- <div class="p-bbt mt-4" style="text-align: center;">
+							</?php $services = json_decode($data['nurse']['services'], true);
+							if (!empty($services)) {
+								foreach ($services as $k => $service) { ?>
+									<span class="desig-in"></?= $service . " " . ($k != sizeof($services) - 1 ? ', ' : '') ?></span>
+								</?php }
+							} else { ?>
+								<p class="text-center mt-1">No services yet</p>
+							</?php } ?>
+							<div class="col-lg-4 col-md-4 offset-4" style="margin-top: 15px!important">
+								<div class="d-flex justify-content-center">
+									<a href="#" class="btn btn-dark btn-main btn-lg btn-block mt-0 mb-5" data-toggle="modal" data-target="#serModal">Add Service</a>
+								</div>
+							</div>
+						</div> -->
+						<!--							<div class="job-bx jb-grid">-->
+						<!--								<div class="form-group">-->
+						<!--									<span><i class="las la-check-circle"></i> Babysitting</span>-->
+						<!--								</div>-->
+						<!--								<div class="form-group">-->
+						<!--									<span><i class="las la-check-circle"></i> Sleep Consultant</span>-->
+						<!--								</div>-->
+						<!--								<div class="form-group">-->
+						<!--									<span><i class="las la-check-circle"></i> Lactation Consultant</span>-->
+						<!--								</div>-->
+						<!--								<div class="form-group">-->
+						<!--									<span><i class="las la-check-circle"></i> Babysitting</span>-->
+						<!--								</div>-->
+						<!--								<div class="form-group">-->
+						<!--									<span><i class="las la-check-circle"></i> Sleep Consultant</span>-->
+						<!--								</div>-->
+						<!--							</div>-->
+					</div>
+				</div>
+
+				<div class="tab-pane fade 2tab" id="payroll">
+					<div class="job-profile">
+						<div class="job-bx-title clearfix">
+							<div class="container container-my">
+								<h5 class="font-weight-700 pull-left text-uppercase">Payroll</h5>
+							</div>
+						</div>
+						<div class="container container-my">
+							<div class="job-bx">
+								<div class="row">
+									<div class="col-lg-12">
+										<h5 class="mt-2 h5-chk-frm">Award classification </h5>
+										<p>
+											Nest Care follows the miscellaneous award and/or minimum wage guidelines
+											to guide staff wages and entitlements. Based on this award, staff are ranked
+											in levels related to qualification status.
+										</p>
+
+
+
+
+									</div>
+
+
+									<div class="col-lg-12 mt-2">
+										<div class="form-group">
+											<label>As per the miscellanious award I am currently classified as a: :</label>
+											<!-- <button class="btn fr-rgt btn-main btn-block btn-sm mt-0" type="button" data-toggle="modal" data-target="#fName"><i class="las la-edit"></i></button> -->
+											<!-- <input class="form-control hght-fld" type="text" name="I am currently classified" id=""> -->
+											<select name="I am currently classified" class="form-control" id="">
+												<option value="Level 2a - Unqualified Staff">
+													Level 2a - Unqualified Staff
+												</option>
+												<option value="Level 2b - Childcare studying/qualified Staff">
+													Level 2b - Childcare studying/qualified Staff
+												</option>
+												<option value="Level 3 - Maternity Practitioner Staff">
+													Level 3 - Maternity Practitioner Staff
+												</option>
+												<option value="Level 4 - Nurse/Midwife (Healthcare qualified) Staff">
+													Level 4 - Nurse/Midwife (Healthcare qualified) Staff
+												</option>
+
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<h5 class="mt-2 h5-chk-frm">Employment type </h5>
+										<p>
+											Staff at Nest Care can be employed as a casual employee and/or as a contractor.
+											Casual employees maintain weekly timesheets and receive PAYG payslips. Rates are
+											paid as per the misc award (Saturday night shift rates). Contractors maintain
+											timesheets and are paid via invoice. Rates and entitlements are set by the
+											contractor but must be at or higher than the minimum wage guidelines. Staff can
+											choose to work across both models if a job falls outside the scope of the misc
+											award.
+										</p>
+									</div>
+
+									<div class="col-lg-12 mt-2">
+										<div class="form-group">
+											<label>I wish to be employeed as a:</label>
+											<select id="ser_emp_type" onchange="set_SerEmptype()" class="form-control">
+												<option value="ABN contractor">select employee type</option>
+												<option value="ABN contractor">ABN contractor</option>
+												<option value="Causal employee">Causal employee</option>
+												<option value="Both, ABN contractor and causal employee">Both, ABN contractor and causal employee</option>
+											</select>
+											<script>
+												function set_SerEmptype() {
+													var ser_emp_type = document.getElementById("ser_emp_type").value;
+													if (ser_emp_type == "ABN contractor" || ser_emp_type == "Both, ABN contractor and causal employee") {
+														console.log("wokring service emplyee");
+														document.getElementById("abn_num").style.display = "block";
+
+													} else {
+														document.getElementById("abn_num").style.display = "none";
+													}
+													if (ser_emp_type == "Causal employee" || ser_emp_type == "Both, ABN contractor and causal employee") {
+														document.getElementById("cas_emp").style.display = "block";
+														document.getElementById("cas_emp1").style.display = "block";
+
+													} else {
+														document.getElementById("cas_emp1").style.display = "none";
+
+													}
+												}
+											</script>
+										</div>
+									</div>
+
+									<div style="display: none;" id="abn_num" class="col-lg-6 mt-2">
+										<p class="substitle_idcheck">ABN :</p>
+										<div class="form-group">
+											<label>What is your Australian Business Number (ABN)?</label>
+											<input type="text" class="form-control" placeholder="Enter ABN" />
+										</div>
+									</div>
+
+									<div class="col-lg-12">
+										<p class="substitle_idcheck">Insurance/policy details :</p>
+
+									</div>
+
+									<div class="col-lg-6 ">
+										<div class="form-group">
+											<label>Insurance company name</label>
+											<input type="text" class="form-control" placeholder="Enter Insurance Comapny Name" />
+
+										</div>
+									</div>
+									<div class="col-lg-6 ">
+										<div class="form-group">
+											<label>Policy number</label>
+											<input type="number" class="form-control" placeholder="Enter policy number" />
+
+										</div>
+									</div>
+
+									<div style="display: none;" id="cas_emp" class="col-lg-12 ">
+										<p class="substitle_idcheck">Casual employee :</p>
+									</div>
+
+									<div style="display: none;" id="cas_emp1" class="col-lg-6">
+										<div class="form-group">
+											<label>Tax File Number (TFN)</label>
+											<input type="number" class="form-control" placeholder="Enter TFN" />
+										</div>
+									</div>
+
+									<div class="col-lg-12">
+										<p>Link to ATO form <a class="anch_hvr" href="https://www.ato.gov.au/uploadedFiles/Content/IND/Downloads/TFN_declaration_form_N3092.pdf">https://www.ato.gov.au/uploadedFiles/Content/IND/Downloads/TFN_declaration_form_N3092.pdf</a> </p>
+									</div>
+
+									<div class="col-lg-12">
+										<p class="substitle_idcheck">Please complete and attach the following form :</p>
+
+									</div>
+
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label>ATO upload</label>
+											<input type="file" class="form-control" />
+										</div>
+									</div>
+
+									<div class="col-lg-12">
+										<p class="substitle_idcheck">Superannuation :</p>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label>Fund name</label>
+											<input type="text" class="form-control" />
+										</div>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label>Account number</label>
+											<input type="text" class="form-control" />
+										</div>
+									</div>
+
+									<div class="col-lg-12">
+										<h5 class="mt-2 h5-chk-frm">Pay frequency</p>
+									</div>
+
+									<div class="col-lg-6">
+										<div style="position: relative;" class="form-group">
+											<label>I wish to be paid <i style="position:absolute; top: 60%;z-index: 9;left: 93%; background-image: linear-gradient(#dadde4, #dadde4);border-radius: 50px;color: #000;font-size: 8px; padding: 3px;" class="fa fa-chevron-down" aria-hidden="true"></i></label>
+											<select class="form-control">
+												<option>Weekly</option>
+												<option>Fortnightly</option>
+												<option>Monthly</option>
+
+											</select>
+										</div>
+									</div>
+
+									<div class="col-lg-12">
+										<h5 class="mt-2 h5-chk-frm">Pay slip</p>
+									</div>
+
+									<div class="col-lg-12">
+										<div class="form-group">
+
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
